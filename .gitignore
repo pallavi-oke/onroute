@@ -11,3 +11,15 @@ briefings/
 *.mp3
 .vscode/
 .idea/
+
+# Logs and cache (may contain email content)
+*.log
+logs/
+cache/
+*.db
+*.sqlite
+*.sqlite3
+
+# Local config that might hold tokens
+config.local.json
+secrets/
