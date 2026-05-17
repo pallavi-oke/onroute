@@ -1,0 +1,13 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.env.local
+.DS_Store
+output/
+briefings/
+*.mp3
+.vscode/
+.idea/
