@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>OnRoute</title>
+    <link>https://pallavi-oke.github.io/onroute</link>
+    <description>Pallavi's personal commute briefing agent.</description>
+    <language>en-us</language>
+    <itunes:author>Pallavi Oke</itunes:author>
+    <itunes:summary>Pallavi's personal commute briefing agent.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Technology" />
+    <item>
+      <title>OnRoute Briefing — May 17, 2026</title>
+      <description>Today's briefing from OnRoute.</description>
+      <pubDate>Sun, 17 May 2026 23:37:45 +0000</pubDate>
+      <enclosure url="https://pallavi-oke.github.io/onroute/audio/briefing.mp3" length="211113" type="audio/mpeg" />
+      <guid isPermaLink="false">https://pallavi-oke.github.io/onroute/audio/briefing.mp3</guid>
+      <itunes:duration>00:01:00</itunes:duration>
+    </item>
+  </channel>
+</rss>
