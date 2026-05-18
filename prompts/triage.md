@@ -65,6 +65,25 @@ Return strict JSON per email:
 - Financial notifications with specific amounts or partial account numbers: always confidential.
 - Community digests (Nextdoor, etc.): case-by-case based on snippet content;
   default skip unless safety-relevant.
+
+# Sender-specific overrides (always-summarize allowlist)
+
+The following senders are always classified as `summarize`, bypassing the default
+"newsletter = skip" rule because the user actively follows these for daily AI / PM
+content:
+
+- `thebatch@deeplearning.ai` — DeepLearning.AI's weekly Batch newsletter
+
+(Add to this list as more trusted newsletters are identified. The override only
+applies when the sender match is exact — `hello@deeplearning.ai` (course marketing)
+still falls under the default newsletter-skip rule.)
+
+# Senders intentionally NOT on the allowlist (worth documenting)
+
+- `myaicommunity@substack.com` — Mahesh Yadav's Substack. Content is mostly Maven
+  course marketing rather than substantive AI PM content. Mahesh's actual
+  educational content is on his YouTube channel `@MaheshAIPMCommunity` ("Agentic
+  AI Institute"), which is handled by the YouTube source producer.
 ```
 
 ## Input contract
