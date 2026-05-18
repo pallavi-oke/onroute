@@ -23,4 +23,12 @@ cache/
 # Local config that might hold tokens
 config.local.json
 secrets/
+
+# Personal state — listening positions, Watch Later queue
+state/
+
+# Cached source media (e.g., downloaded Lenny MP3s)
+downloads/
+
+# Exception: MP3s in docs/audio/ are intentionally published via GitHub Pages
 !docs/audio/*.mp3

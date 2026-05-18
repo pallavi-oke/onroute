@@ -29,7 +29,7 @@ OnRoute automates that synthesis layer.
 - Tracks listening position across days — if today's drive only fits 50 minutes of a 99-minute episode, tomorrow's briefing picks up where I left off
 - Pulls new non-Shorts uploads from 2 YouTube channels (DeepLearning.AI and Mahesh Yadav's Agentic AI Institute), summarizes each into a 30-60 second preview, and queues URLs in the podcast episode notes for later viewing
 - Fetches today's and tomorrow's Bay Club Pleasanton classes via their public schedule API, filtered to my 7 class types
-- Composes a TTS playlist sized to my time budget — connective tissue in a voice clone, Lenny in his actual voice
+- Composes a TTS playlist sized to my time budget — connective tissue in a ElevenLabs voice, Lenny in his actual voice
 - Delivers as a private RSS feed via GitHub Pages, picked up automatically by Apple Podcasts on my iPhone
 
 ## How It Works
@@ -46,7 +46,7 @@ Per-source candidate fetchers (Python)
    BriefingPlanner agent (Claude Sonnet 4.5)
             ↓
    JSON playlist with two segment types:
-      tts segments (text for voice clone)
+      tts segments (text for ElevenLabs voice)
       audio segments (URL + position + duration for passthrough)
             ↓
    Audio generation
@@ -66,7 +66,7 @@ Per-source candidate fetchers (Python)
 
 **The BriefingPlanner (the agent):**
 
-The planner reads all candidate items + my time budget + mode + current date and produces an ordered playlist of segments. The planner does both selection (which items make it in) and script-writing (what gets spoken) in a single Claude call. Two segment types: `tts` (text for voice clone) and `audio` (external MP3 passthrough with start position and duration).
+The planner reads all candidate items + my time budget + mode + current date and produces an ordered playlist of segments. The planner does both selection (which items make it in) and script-writing (what gets spoken) in a single Claude call. Two segment types: `tts` (text for ElevenLabs voice) and `audio` (external MP3 passthrough with start position and duration).
 
 The planner stays under budget. Composition rationale is included in the output so I can see why it chose what it chose — useful for debugging and for tuning the prompt over time.
 
@@ -107,7 +107,7 @@ Apple Podcasts on iPhone picks up the feed at `https://pallavi-oke.github.io/onr
 
 **Design the no-send guarantee at the permission layer, not in code.** I considered enforcing "no send" with a code-level rule before plugging into Gmail. Then I noticed the Gmail MCP server exposes `search_threads`, `get_thread`, and `create_draft` — but no `send_email` tool. The capability literally doesn't exist. That's a stronger guarantee than any rule I could write, and it's the architectural pattern I'd reach for anywhere the cost of a wrong agent action is high.
 
-**The connective tissue voice should never duplicate what the source material already does.** First run, the voice clone introduced Caitlin Kalinowski, then Lenny's audio started and introduced her again. Felt awkward. Fix was 1 prompt revision: the transition for a fresh episode is "Now for today's Lenny" — minimal — and Lenny's own intro covers the guest. For multi-day continuation, the transition becomes "Picking up where you left off, around the forty-seven minute mark" — which is useful precisely because Lenny doesn't re-introduce the guest mid-episode. The connective tissue adapts based on what the source already provides.
+**The connective tissue voice should never duplicate what the source material already does.** First run, the ElevenLabs voice introduced Caitlin Kalinowski, then Lenny's audio started and introduced her again. Felt awkward. Fix was 1 prompt revision: the transition for a fresh episode is "Now for today's Lenny" — minimal — and Lenny's own intro covers the guest. For multi-day continuation, the transition becomes "Picking up where you left off, around the forty-seven minute mark" — which is useful precisely because Lenny doesn't re-introduce the guest mid-episode. The connective tissue adapts based on what the source already provides.
 
 **Hidden public APIs beat scrapers.** Bay Club's schedule page is JavaScript-rendered. The "obvious" path was Playwright (headless browser, ~150 MB of Chromium, slow, fragile). 5 minutes in Chrome DevTools' Network tab revealed the page calls a public Azure-hosted JSON endpoint behind the scenes. No auth, no scraping, no browser overhead. The right way to integrate with most modern sites is to find the underlying API, not to render the page. Transferable to almost any future integration.
 
@@ -137,6 +137,6 @@ Python · Anthropic Claude Sonnet 4.5 · ElevenLabs · Gmail MCP · pydub · fee
 
 ## About
 
-OnRoute is the 5th in a portfolio of agentic AI prototypes by [Pallavi Oke](https://github.com/pallavi-oke) — exploring how autonomous agents can own end-to-end product workflows in ad tech, real estate, insurance, and now personal-productivity space.
+OnRoute is the latest in a portfolio of agentic AI prototypes by [Pallavi Oke](https://github.com/pallavi-oke) — exploring how autonomous agents can own end-to-end product workflows in ad tech, real estate, insurance, and now personal-productivity space.
 
 Also see: [AdRx](https://github.com/pallavi-oke/adrx) (campaign performance agent), [ContentForge](https://github.com/pallavi-oke/contentforge) (multi-agent content pipeline), [PolicyPilot](https://github.com/pallavi-oke/policypilot) (ad compliance agent), [MerchantMind / Sentinel Vantage](https://github.com/pallavi-oke/merchantmind) (AI-driven corporate rewards).
