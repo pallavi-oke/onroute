@@ -4,9 +4,9 @@
 
 ## Demo
 
-[![OnRoute walkthrough](docs/dashboard-screenshot.png)](docs/onroute_final_demo.mp4)
+**Watch the 60-second walkthrough:** [`docs/onroute_final_demo.mp4`](docs/onroute_final_demo.mp4)
 
-*A 60-second walkthrough with an AI avatar (not me) narrated by an ElevenLabs voice is available at [`docs/onroute_final_demo.mp4`](docs/onroute_final_demo.mp4).*
+*Narrated by an ElevenLabs voice. An AI avatar (not me) provides the visual.* Click the link above to open the video on GitHub — it plays inline in your browser.
 
 ## The Problem
 
