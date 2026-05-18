@@ -10,12 +10,17 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Technology" />
     <item>
-      <title>OnRoute Briefing — May 17, 2026</title>
-      <description>Today's briefing from OnRoute.</description>
-      <pubDate>Sun, 17 May 2026 23:37:45 +0000</pubDate>
-      <enclosure url="https://pallavi-oke.github.io/onroute/audio/briefing.mp3" length="211113" type="audio/mpeg" />
-      <guid isPermaLink="false">https://pallavi-oke.github.io/onroute/audio/briefing.mp3</guid>
-      <itunes:duration>00:01:00</itunes:duration>
+      <title>OnRoute Briefing — Monday, May 18, 2026</title>
+      <description><![CDATA[<p>Today's OnRoute briefing covers your inbox highlights, Lenny's latest podcast (multi-day continuation), Bay Club Pleasanton classes for today and tomorrow, plus quick previews of new AI videos worth watching later.</p>
+<h3>Mentioned in this briefing (tap to watch):</h3>
+<ul>
+<li><em>Agentic AI Institute (Mahesh Yadav):</em> <a href="https://www.youtube.com/watch?v=qUPWknw8P6w">Why Most PMs Fail AI Vibe Coding Interviews (TRUST Framework Explained)</a></li>
+<li><em>DeepLearning.AI:</em> <a href="https://www.youtube.com/watch?v=20qpc5m5Pko">Inside AI Dev 26 × San Francisco</a></li>
+</ul>]]></description>
+      <pubDate>Mon, 18 May 2026 01:15:58 +0000</pubDate>
+      <enclosure url="https://pallavi-oke.github.io/onroute/audio/briefing-2026-05-17.mp3" length="6267342" type="audio/mpeg" />
+      <guid isPermaLink="false">https://pallavi-oke.github.io/onroute/audio/briefing-2026-05-17.mp3</guid>
+      <itunes:summary>Pallavi&#x27;s personal commute briefing agent.</itunes:summary>
     </item>
   </channel>
 </rss>
