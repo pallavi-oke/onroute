@@ -1,8 +1,6 @@
 # OnRoute — An Agentic Commute Briefing
 
-An AI agent that decides how I should spend my hour. Pulls today's top emails, plays Lenny's latest podcast in his own voice, previews new AI videos worth my time, and rolls Bay Club classes into the mix — composed against my time budget and delivered as a private podcast feed.
-
-Built in Claude Cowork. Listens to me, not the other way around.
+   An AI agent that decides how I spend my hour. Composes a daily commute briefing from email, podcasts, AI videos, and gym classes — narrated by ElevenLabs, mixed with Lenny's actual podcast voice, delivered to my iPhone.
 
 ## Demo
 
